@@ -51,19 +51,62 @@ if (Meteor.isClient) {
     'click .time': function (event){
       Session.set("time", event.target.name);
       console.log(event.target.name)
-      Meteor.call("findFinal")
     },
     'click .day': function (event){
       Session.set("day", event.target.name);
       console.log(event.target.name)
-      Meteor.call("findFinal")
     }
   });
 
   Tracker.autorun(function () {
     var time = Session.get("time");
     var day  = Session.get("day");
-
+    if (time == 1 && day == 107) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "7:30AM")
+    } else if (time == 2) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "7:30AM")
+    } else if (time == 3) {
+      Session.set("finalDay", "Tuesday")
+      Session.set("finalTime", "10:00AM")
+    } else if (time == 4) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "10:00AM")
+    } else if (time == 5) {
+      Session.set("finalDay", "Thursday")
+      Session.set("finalTime", "10:00AM")
+    } else if (time == 6) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 7) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 9) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 10) {
+      Session.set("finalDay", "Tuesday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 12) {
+      Session.set("finalDay", "Thursday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 8 && (day == 106 || day == 104 || day == 105)) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 8 && day == 108) {
+      Session.set("finalDay", "Tuesday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 11 && (day == 106 || day == 104)) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "12:30AM")
+    } else if (time == 11 && day == 108) {
+      Session.set("finalDay", "Thursday")
+      Session.set("finalTime", "12:30AM")
+    } else {
+      Session.set("finalDay", "")
+      Session.set("finalTime", "")
+    }
   });
 
   Template.hello.helpers({
@@ -71,7 +114,7 @@ if (Meteor.isClient) {
       return Session.get("finalDay")
     },
     finalTime: function () {
-      return Session.get("finalDay")
+      return Session.get("finalTime")
     }
   })
 }
