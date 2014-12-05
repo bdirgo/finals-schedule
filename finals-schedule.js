@@ -34,15 +34,16 @@ if (Meteor.isClient) {
     ],
 
     daysOfWeek: [
+
       { day: "M  ", val: 100},
       { day: "T  ", val: 101},
       { day: "W  ", val: 102},
       { day: "TH ", val: 103},
       { day: "F  ", val: 104},
       { day: "S  ", val: 105},
-      { day: "MW ", val: 106},
-      { day: "MWF", val: 107},
-      { day: "TTH", val: 108}
+      { day: "M,W ", val: 106},
+      { day: "M,W,F", val: 107},
+      { day: "T,TH", val: 108}
     ]
     
   });
@@ -78,31 +79,58 @@ if (Meteor.isClient) {
       Session.set("finalTime", "10:00AM")
     } else if (time == 6) {
       Session.set("finalDay", "Wednesday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 7) {
       Session.set("finalDay", "Monday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 9) {
       Session.set("finalDay", "Wednesday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 10) {
       Session.set("finalDay", "Tuesday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 12) {
       Session.set("finalDay", "Thursday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
+    } else if (time == 14) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "3:00PM")
     } else if (time == 8 && (day == 106 || day == 104 || day == 105)) {
       Session.set("finalDay", "Monday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 8 && day == 108) {
       Session.set("finalDay", "Tuesday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 11 && (day == 106 || day == 104)) {
       Session.set("finalDay", "Wednesday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
     } else if (time == 11 && day == 108) {
       Session.set("finalDay", "Thursday")
-      Session.set("finalTime", "12:30AM")
+      Session.set("finalTime", "12:30PM")
+    } else if (time == 13 && (day == 107 || day == 100)) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 13 && (day == 101 || day == 103 || day == 108)) {
+      Session.set("finalDay", "Tuesday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 13 && day == 102) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 15 && day == 100) {
+      Session.set("finalDay", "Monday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 15 && (day == 101 || day == 103)) {
+      Session.set("finalDay", "Tuesday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 15 && day == 102) {
+      Session.set("finalDay", "Wednesday")
+      Session.set("finalTime", "3:00PM")
+    } else if (time == 16 || time == 17 || time == 18) {
+      Session.set("finalDay", "First day of normal week")
+      Session.set("finalTime", "5:30PM")
+    } else if (time == 19 || time == 20 || time == 21) {
+      Session.set("finalDay", "First day of normal week")
+      Session.set("finalTime", "8:00PM")
     } else {
       Session.set("finalDay", "")
       Session.set("finalTime", "")

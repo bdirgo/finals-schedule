@@ -14,7 +14,7 @@
 		
 	{{/each}}
 
-	<p>What DAY do you fucking meet every week?</p>
+	<p>What DAYS do you fucking meet every week?</p>
   	
 	{{#each daysOfWeek}}
 		
@@ -23,13 +23,18 @@
 		
 	{{/each}}
 
+	<p></p>
+
   {{> hello}}
 </body>
 
 <template name="hello">
 
-  	{{finalDay}}
+	{{#if finalDay}}
+	Your Final is on 
+  	{{finalDay}} at 
   	{{finalTime}}
+  	{{/if}}
 
 </template>
 
