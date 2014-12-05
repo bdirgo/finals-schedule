@@ -3,39 +3,33 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>What time is my Fucking Final!</h1>
+
+	<p>What TIME do you fucking meet every week?</p>
+  	
+	{{#each times}}
+		
+		<button class="time" name="{{val}}">{{time}}</button>
+		
+		
+	{{/each}}
+
+	<p>What DAY do you fucking meet every week?</p>
+  	
+	{{#each daysOfWeek}}
+		
+		<button class="day" name="{{val}}">{{day}}</button>
+		
+		
+	{{/each}}
 
   {{> hello}}
 </body>
 
 <template name="hello">
-  
-  <p>Is the class CHM 151?</p>
-  <button class="YES">YES</button>
-  <button class="NO">NO</button>
-  {{#if CHMNO}}
 
-  	<p></p>
-  	<p>What time do you meet?</p>
-  	
-  		{{#each times}}
-  			
-  			<button name="{{val}}">{{time}}</button>
-  			
-  		{{/each}}	
-  		
-  		{{#if TIMEYES}} 
-  		<!-- TIM EYES! -->
-  			<p>What days do you meet?</p>
+  	{{finalDay}}
+  	{{finalTime}}
 
-  			{{#each days}}
-
-  				<button>{{day}}</button>
-
-  			{{/each}}
-
-  		{{/if}}
-
-  {{/if}}
 </template>
 
