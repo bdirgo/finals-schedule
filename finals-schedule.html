@@ -1,5 +1,5 @@
 <head>
-  <title>finals-schedule</title>
+  <title>NAU 2014 Finals</title>
 </head>
 
 <body>
@@ -9,6 +9,33 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  
+  <p>Is the class CHM 151?</p>
+  <button class="YES">YES</button>
+  <button class="NO">NO</button>
+  {{#if CHMNO}}
+
+  	<p></p>
+  	<p>What time do you meet?</p>
+  	
+  		{{#each times}}
+  			
+  			<button name="{{val}}">{{time}}</button>
+  			
+  		{{/each}}	
+  		
+  		{{#if TIMEYES}} 
+  		<!-- TIM EYES! -->
+  			<p>What days do you meet?</p>
+
+  			{{#each days}}
+
+  				<button>{{day}}</button>
+
+  			{{/each}}
+
+  		{{/if}}
+
+  {{/if}}
 </template>
+
