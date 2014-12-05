@@ -1,39 +1,51 @@
 <head>
   <title>NAU 2014 Finals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-  <h1>What time is my Fucking Final!</h1>
+  <h1 class="text-center">When are my Fucking Finals!</h1>
 
-	<p>What TIME do you fucking meet every week?</p>
+	<h3 class="text-center">What TIME do you fucking meet every week?</h3>
   	
+  	<div class="btn-group btn-group-justified btn-lg text-center" role="group">
 	{{#each times}}
 		
 		<button class="time" name="{{val}}">{{time}}</button>
 		
 		
 	{{/each}}
+	</div>
 
-	<p>What DAYS do you fucking meet every week?</p>
-  	
+	<h3 class="text-center">What DAYS do you fucking meet every week?</h3>
+
+  	<div class="btn-group btn-group-justified btn-lg text-center" role="group">
 	{{#each daysOfWeek}}
 		
 		<button class="day" name="{{val}}">{{day}}</button>
 		
 		
 	{{/each}}
-
+	</div>
+	
 	<p></p>
 
   {{> hello}}
+
 </body>
 
-<template name="hello">
 
+<template name="hello">
+	
 	{{#if finalDay}}
+	<h1 class="text-center">
 	Your Final is on 
   	{{finalDay}} at 
   	{{finalTime}}
+  	</h1>
+  	<footer>
+	<p class="text-center">When are my Fucking Finals - Created with ♥ by <a href="https://twitter.com/bdirgo">@bdirgo</a>.</p>
+</footer>
   	{{/if}}
 
 </template>
